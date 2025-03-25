@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[url('https://images.pexels.com/photos/2101187/pexels-photo-2101187.jpeg?auto=compress&cs=tinysrgb&w=600')] bg-cover bg-no-repeat">
+    <nav class="flex h-30 w-full justify-between items-center bg-slate-800 px-16">
+        <img src="/download (1).jpeg" alt="" class="w-20 h-20 rounded-full border border-white">
+        
+        <div class="flex-1 flex justify-center">
+            <ul class="flex space-x-8 text-lg">
+                <li><a class="text-white hover:text-blue-200" href="#home">Home</a></li>
+                <li><a class="text-white hover:text-blue-200" href="#About us">About</a></li>
+                <li><a class="text-white hover:text-blue-200" href="#product">Product</a></li>
+                <li><a class="text-white hover:text-blue-200" href="#review">Review</a></li>
+                <li><a class="text-white hover:text-blue-200" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        
+        <button class="bg-blue-800 text-white hover:bg-indigo-900 px-8 py-4 rounded-full transition hover:translate-y-2">Join Us</button>
+    </nav>
+    
+    <div id="content" class="text-black flex-1 p-20">
+        <h1 class="text-4xl font-bold mb-6">Fresh Flowers</h1>
+        <h2 class="text-2xl mb-4"><span style="color: deeppink;">Natural & Beautiful Flowers</span></h2>
+        <p class="text-3xl text-slate-800">Discover the beauty of fresh flowers, perfect for any occasion.
+             Our collection offers a variety of natural, vibrant, and fragrant flowers that bring joy and elegance to your space.</p>
+    </div>
+    
+    <button class="bg-slate-800 text-white hover:bg-indigo-900 px-6 py-3 rounded-full transition transform hover:-translate-y-1 ml-16 mb-10">Shop Now</button>
+
+
+
+
+<!-- About section -->
+<section class="bg-[url('https://images.pexels.com/photos/2039606/pexels-photo-2039606.jpeg?auto=compress&cs=tinysrgb&w=600')] bg-cover bg-no-repeat p-20 text-white text-center">
+    <h1 class="text-4xl font-bold mb-10"><span style="color: orangered;">About Us</span></h1>
+
+    <div class="flex flex-col lg:flex-row items-center">
+        <div class="lg:w-1/2 flex justify-center">
+            
+            <video class="w-3/4 rounded-lg shadow-lg" controls autoplay loop muted>
+                <source src="video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="lg:w-1/2 text-left p-10">
+            <h2 class="text-3xl font-semibold mb-4 text-slate-800">Why Choose Us?</h2>
+            <p class="text-lg text-slate-800">At our flower shop, we are committed to providing the freshest, most vibrant flowers for every occasion.
+                Our carefully curated selection ensures high-quality blooms that bring joy and beauty into your life.
+                We prioritize customer satisfaction with reliable delivery, expert floral arrangements, and personalized service.
+                Whether you're celebrating a special moment or simply brightening your space, our flowers are handpicked to create lasting memories.
+                Choose us for unmatched quality, creativity, and a passion for bringing nature’s beauty to you. 🌸✨</p><br><br>
+            <button class="bg-blue-800 text-white hover:bg-indigo-900 px-8 py-4 rounded-full transition hover:translate-y-2">Learn More</button>
+        </div>
+    </div>
+</section>
+
+<!-- product page -->
+<!-- Latest Product Section -->
+<section class="bg-[url('https://img.freepik.com/free-vector/hand-painted-watercolor-floral-wallpaper_52683-67103.jpg')] bg-cover bg-no-repeat p-20 text-white text-center">
+    <h1 class="text-4xl font-bold mb-10">
+        <span style="color: orangered;">Latest Product</span>
+    </h1>
+    
+    <div class="flex flex-col lg:flex-row items-center">
+        <div class="lg:w-1/2 p-6">
+            <h2 class="text-4xl font-bold text-orangered lg:text-left mb-4">
+               <span style="color: orangered;"> Welcome to a world of blooming beauty!</span>
+            </h2>
+            <p class="text-2xl text-slate-800 lg:text-left">
+                Introducing our latest floral masterpiece, the <strong>Pink Reverie</strong> bouquet.
+                This enchanting arrangement features a harmonious blend of fresh blooms, carefully selected to evoke a sense of dreamy elegance.
+                Wrapped in your choice of colors to suit any occasion, the <strong>Pink Reverie</strong> is a perfect expression of love, joy, and sophistication.
+                Let its timeless beauty brighten your special moments!
+            </p>
+        </div>
+        <!-- images <section> -->
+            <div class="flex justify-center">
+                <div class="grid grid-cols-3 gap-4">
+                    <!-- Card One -->
+                    <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+                        <a href="#">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Pinkykk</h5>
+                        </a>
+                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><img src="./download (1).jpeg" alt=""></p>
+                        <p class="mb-3  text-gray-700 dark:text-gray-400 font-bold">Price: $15.99</p>
+                        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            Read more
+                        </a>
+                    </div>
+                    
+                    <!-- Card Two -->
+                    <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+                        <a href="#">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Reddy</h5>
+                        </a>
+                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><img src="https://img.freepik.com/free-photo/bouquet-flowers-with-white-background_1232-1088.jpg?semt=ais_hybrid" alt=""></p>
+                        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            Read more
+                        </a>
+                    </div>
+                    
+                    <!-- Card Three -->
+                    <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+                        <a href="#">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Sunny</h5>
+                        </a>
+                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><img src="https://img.freepik.com/free-photo/top-view-roses-flowers_23-2148860041.jpg?semt=ais_hybrid" alt=""></p>
+                        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            Read more
+                        </a>
+                    </div>
+                    
+                    <!-- Card Four -->
+                    <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+                        <a href="#">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Alex</h5>
+                        </a>
+                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><img src="https://img.freepik.com/premium-photo/bouquet-pink-roses-isolated_62856-3163.jpg?semt=ais_hybrid" alt=""></p>
+                        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            Read more
+                        </a>
+                    </div>
+                    
+                    <!-- Card Five -->
+                    <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+                        <a href="#">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Charlie</h5>
+                        </a>
+                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><img src="https://img.freepik.com/free-photo/top-view-beautiful-flowers-different-colors_23-2149005617.jpg?semt=ais_hybrid" alt=""></p>
+                        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            Read more
+                        </a>
+                    </div>
+                    
+                    <!-- Card Six -->
+                    <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+                        <a href="#">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Jessie</h5>
+                        </a>
+                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><img src="https://img.freepik.com/free-photo/vase-with-beautiful-bouquet_1232-494.jpg?semt=ais_hybrid" alt=""></p>
+                        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            Read more
+                        </a>
+                    </div>
+            
+
+
+        
+    </div>
+</section>
+<section class="bg-[url('https://images.pexels.com/photos/268261/pexels-photo-268261.jpeg?auto=compress&cs=tinysrgb&w=600')] bg-cover bg-no-repeat p-20 text-white text-center">
+
+    <!-- Contact Form -->
+    <div class="w-full md:w-1/2 mt-6 md:mt-0 mx-auto">
+        <div class="flex justify-center">
+            <h1 class="font-bold text-4xl w-max">
+                <span style="color: orangered;">Contact Form</span>
+            </h1><br><br><br>
+        </div>
+        <input type="text" placeholder="Your name" class="w-full p-3 border border-gray-300 rounded-lg mb-4 text-black">
+        <input type="email" placeholder="Your email" class="w-full p-3 border border-gray-300 rounded-lg mb-4 text-black">
+        <textarea placeholder="Your message" class="w-full p-3 border border-gray-300 rounded-lg mb-4 text-black"></textarea>
+        <button class="bg-orange-500 text-white py-2 px-6 rounded-lg">Submit</button>
+    </div>
+
+</section>
+
+
+
+
+        
+
+
+     
+</body>
+</html>

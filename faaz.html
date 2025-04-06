@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Our Floral Services</title>
+</head>
+<body>
+    <div class="bg-red-600 text-white container-fluid p-2">
+        <h1 class="text-center text-4xl font-semibold">Our Floral Services</h1>
+    </div>
+
+    <!-- Admin Controls (Normally hidden or behind auth) -->
+    <div class="container mx-auto p-4 bg-gray-100 rounded-lg mt-4">
+        <h2 class="text-2xl font-bold mb-4 text-orange-600">Manage Services</h2>
+        <form id="serviceForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <input type="hidden" id="serviceId">
+            
+            <div>
+                <label class="block text-gray-700">Service Name</label>
+                <input type="text" id="serviceName" required 
+                       class="w-full p-2 border rounded">
+            </div>
+            
+            <div>
+                <label class="block text-gray-700">Image URL</label>
+                <input type="url" id="serviceImage" required 
+                       class="w-full p-2 border rounded">
+            </div>
+            
+            <div>
+                <label class="block text-gray-700">Description</label>
+                <textarea id="serviceDescription" required 
+                          class="w-full p-2 border rounded"></textarea>
+            </div>
+            
+            <div>
+                <label class="block text-gray-700">Price</label>
+                <input type="text" id="servicePrice" required 
+                       class="w-full p-2 border rounded">
+            </div>
+            
+            <div class="md:col-span-2 flex space-x-4">
+                <button type="submit" id="saveBtn" 
+                        class="bg-red-600 text-white px-4 py-2 rounded hover:bg-green-700">
+                    Add Service
+                </button>
+                <button type="button" id="cancelBtn" 
+                        class="bg-red-600 text-white px-4 py-2 rounded hover:bg-gray-700">
+                    Cancel
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Services Container -->
+    <div class="container mt-8 px-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7" id="Service-container">
+            <!-- Cards will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <script>
+        // Sample initial data (in a real app, this would come from a database)
+        let services = [
+            {
+                id: 1,
+                name: "Custom Floral Arrangements",
+                image: "https://img.freepik.com/free-vector/bouquet-roses-white-background-flower-rose-pink-gold-arrangement_41066-3926.jpg?ga=GA1.1.1088091088.1742907718&semt=ais_hybrid",
+                description: "Unique bouquets tailored to your style with fresh seasonal flowers.",
+                price: "$15.99"
+            },
+            {
+                id: 2,
+                name: "Wedding Floral Design",
+                image: "https://i.ebayimg.com/images/g/wkwAAOSwrJJlm3fS/s-l960.webp",
+                description: "Bridal bouquets, floral arches, centerpieces, and more for your special day.",
+                price: "$40.99"
+            },
+            {
+                id: 3,
+                name: "Corporate & Office Flowers",
+                image: "https://img.freepik.com/free-photo/bouquet-flowers-with-white-background_1232-1088.jpg?ga=GA1.1.1088091088.1742907718&semt=ais_hybrid",
+                description: "Enhance your workspace with elegant floral arrangements.",
+                price: "$17.99"
+            }
+        ];
+
+        // DOM Elements
+        const serviceContainer = document.getElementById('Service-container');
+        const serviceForm = document.getElementById('serviceForm');
+        const saveBtn = document.getElementById('saveBtn');
+        const cancelBtn = document.getElementById('cancelBtn');
+        const serviceIdInput = document.getElementById('serviceId');
+        const serviceNameInput = document.getElementById('serviceName');
+        const serviceImageInput = document.getElementById('serviceImage');
+        const serviceDescInput = document.getElementById('serviceDescription');
+        const servicePriceInput = document.getElementById('servicePrice');
+
+        // Current editing state
+        let editingId = null;
+
+        // Render all services
+        function renderServices() {
+            serviceContainer.innerHTML = '';
+            
+            services.forEach(service => {
+                const card = document.createElement('div');
+                card.className = 'card bg-white shadow-lg rounded-lg overflow-hidden flex flex-col';
+                card.innerHTML = `
+                    <img src="${service.image}" class="w-full h-48 object-cover" alt="${service.name}">
+                    <div class="p-4 flex flex-col justify-between flex-grow">
+                        <h5 class="text-red-600 text-xl font-bold">${service.name}</h5>
+                        <p class="text-gray-700">${service.description}</p>
+                        <p class="font-semibold text-gray-500">Price: ${service.price}</p>
+                        <div class="mt-4 flex justify-end space-x-2">
+                            <button onclick="editService(${service.id})" class="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-blue-700">Edit</button>
+                            <button onclick="deleteService(${service.id})" class="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700">Delete</button>
+                        </div>
+                    </div>
+                `;
+                serviceContainer.appendChild(card);
+            });
+        }
+
+        // Add or Update service
+        serviceForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const serviceData = {
+                name: serviceNameInput.value,
+                image: serviceImageInput.value,
+                description: serviceDescInput.value,
+                price: servicePriceInput.value
+            };
+            
+            if (editingId) {
+                // Update existing service
+                const index = services.findIndex(s => s.id === editingId);
+                if (index !== -1) {
+                    services[index] = { ...services[index], ...serviceData };
+                }
+                saveBtn.textContent = 'Add Service';
+                editingId = null;
+            } else {
+                // Add new service
+                const newId = services.length > 0 ? Math.max(...services.map(s => s.id)) + 1 : 1;
+                services.push({ id: newId, ...serviceData });
+            }
+            
+            renderServices();
+            serviceForm.reset();
+        });
+
+        // Edit service
+        window.editService = function(id) {
+            const service = services.find(s => s.id === id);
+            if (service) {
+                editingId = id;
+                serviceIdInput.value = id;
+                serviceNameInput.value = service.name;
+                serviceImageInput.value = service.image;
+                serviceDescInput.value = service.description;
+                servicePriceInput.value = service.price;
+                saveBtn.textContent = 'Update Service';
+                
+                // Scroll to form
+                serviceForm.scrollIntoView({ behavior: 'smooth' });
+            }
+        };
+
+        // Delete service
+        window.deleteService = function(id) {
+            if (confirm('Are you sure you want to delete this service?')) {
+                services = services.filter(s => s.id !== id);
+                renderServices();
+                
+                // If we were editing this service, reset the form
+                if (editingId === id) {
+                    editingId = null;
+                    serviceForm.reset();
+                    saveBtn.textContent = 'Add Service';
+                }
+            }
+        };
+
+        // Cancel editing
+        cancelBtn.addEventListener('click', function() {
+            editingId = null;
+            serviceForm.reset();
+            saveBtn.textContent = 'Add Service';
+        });
+
+        // Initial render
+        renderServices();
+    </script>
+</body>
+</html>

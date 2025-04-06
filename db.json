@@ -1,0 +1,68 @@
+{
+    "services": [
+      {
+        "id": 1,
+        "title": "Custom Floral Arrangements",
+        "description": "Unique bouquets tailored to your style with fresh seasonal flowers.",
+        "price": 15.99,
+        "image": "https://img.freepik.com/free-vector/bouquet-roses-white-background-flower-rose-pink-gold-arrangement_41066-3926.jpg?ga=GA1.1.1088091088.1742907718&semt=ais_hybrid"
+      },
+      {
+        "id": 2,
+        "title": "Wedding Floral Design",
+        "description": "Bridal bouquets, floral arches, centerpieces, and more for your special day.",
+        "price": 40.99,
+        "image": "https://i.ebayimg.com/images/g/wkwAAOSwrJJlm3fS/s-l960.webp"
+      },
+      {
+        "id": 3,
+        "title": "Corporate & Office Flowers",
+        "description": "Enhance your workspace with elegant floral arrangements.",
+        "price": 17.99,
+        "image": "https://img.freepik.com/free-photo/bouquet-flowers-with-white-background_1232-1088.jpg?ga=GA1.1.1088091088.1742907718&semt=ais_hybrid"
+      },
+      {
+        "id": 4,
+        "title": "Event & Party Flowers",
+        "description": "Beautiful arrangements for birthdays, baby showers, and more.",
+        "price": 35.99,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzTQSz1vWzZlMophf-qS8ROb3d0VDqetIfIg&s"
+      },
+      {
+        "id": 5,
+        "title": "Sympathy & Funeral Flowers",
+        "description": "Elegant tributes to honor loved ones with respect and care.",
+        "price": 30.99,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNHapW5MVqWKPID__4EI9UGe42rUMkDSWBfw&s"
+      },
+      {
+        "id": 6,
+        "title": "Flower Subscription Service",
+        "description": "Get fresh flowers delivered weekly or monthly to your doorstep.",
+        "price": 20.99,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHdT9oNY_1qmSF3-IDZo374WcfRV96_I53xw&s"
+      },
+      {
+        "id": 7,
+        "title": "Birthday Floral Arrangements",
+        "description": "Bright and cheerful flower arrangements for a memorable birthday celebration.",
+        "price": 22.99,
+        "image": "https://img.freepik.com/free-vector/beautiful-floral-arrangement-with-pink-lilies-and-roses_1150-12887.jpg?ga=GA1.1.1088091088.1742907718&semt=ais_hybrid"
+      },
+      {
+        "id": 8,
+        "title": "Valentine's Day Flowers",
+        "description": "Romantic and elegant floral arrangements to express your love.",
+        "price": 28.99,
+        "image": "https://img.freepik.com/free-vector/beautiful-pink-flower-arrangement_1150-9066.jpg?ga=GA1.1.1088091088.1742907718&semt=ais_hybrid"
+      },
+      {
+        "id": 9,
+        "title": "Garden Floral Designs",
+        "description": "Create stunning garden-inspired floral designs for outdoor spaces.",
+        "price": 25.99,
+        "image": "https://img.freepik.com/free-photo/flower-garden-with-beautiful-roses_1150-23382.jpg?ga=GA1.1.1088091088.1742907718&semt=ais_hybrid"
+      }
+    ]
+  }
+  
